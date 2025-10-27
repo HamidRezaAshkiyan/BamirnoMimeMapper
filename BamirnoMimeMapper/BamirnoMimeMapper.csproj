@@ -1,13 +1,71 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>BamirnoMimeMapper</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Amir Safari</Authors>
+		<Company>Padira</Company>
+		<Description>
+			BamirnoMimeMapper is a lightweight and extensible MIME type validation library for .NET 8. It provides a secure mapping between file extensions and their expected MIME types, and integrates seamlessly with Mime-Detective to verify actual file content.
 
-  <ItemGroup>
-    <PackageReference Include="Mime-Detective" Version="25.8.1" />
-  </ItemGroup>
+			🔒 Key Features:
+
+			Full dictionary of trusted file extensions and MIME types
+
+			Accurate MIME detection using file byte signatures
+
+			Extension-to-MIME and MIME-to-extension conversion
+
+			IsTrustedFile() method to validate file authenticity
+
+			Designed for security-sensitive applications like file upload APIs
+
+			🛠️ Use Cases:
+
+			Prevent spoofed or malicious file uploads
+
+			Validate user-submitted files against expected types
+
+			Build secure file handling pipelines
+
+			Compatible with .NET 8 and tested with Mime-Detective v25.8.1. Ideal for developers who need robust MIME validation without relying on browser or OS-level detection.
+
+			-------------------------------
+			BamirnoMimeMapper یک کتابخانه سبک و قابل توسعه برای اعتبارسنجی نوع MIME فایل‌ها در .NET 8 است. این کتابخانه نگاشت امنی بین پسوند فایل‌ها و نوع MIME مورد انتظارشان فراهم می‌کند و با لایبرری Mime-Detective برای بررسی محتوای واقعی فایل یکپارچه شده است.
+
+			🔒 ویژگی‌های کلیدی:
+
+			دیکشنری کامل از پسوندهای معتبر و نوع MIME متناظر
+
+			تشخیص دقیق نوع MIME با استفاده از امضای بایت فایل
+
+			تبدیل پسوند به MIME و بالعکس
+
+			متد IsTrustedFile() برای بررسی اعتبار فایل
+
+			مناسب برای اپلیکیشن‌های حساس به امنیت مانند APIهای آپلود فایل
+
+			🛠️ موارد استفاده:
+
+			جلوگیری از آپلود فایل‌های جعلی یا مخرب
+
+			اعتبارسنجی فایل‌های ارسال‌شده توسط کاربر
+
+			ساختن سیستم‌های امن برای مدیریت فایل
+
+			سازگار با .NET 8 و تست‌شده با نسخه 25.8.1 از Mime-Detective. مناسب برای توسعه‌دهندگانی که به اعتبارسنجی دقیق MIME نیاز دارند و نمی‌خواهند به تشخیص سطح سیستم‌عامل یا مرورگر اکتفا کنند.
+		</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/Bamirno/BamirnoMimeMapper</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Mime-Detective" Version="25.8.1" />
+	</ItemGroup>
+
+
 
 </Project>
