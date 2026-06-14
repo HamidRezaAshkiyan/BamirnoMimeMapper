@@ -203,9 +203,9 @@ public class Map
     }
 
     /// <summary>
-    /// Check File Extention With Content
+    /// Check File Extension With Content
     /// True = Same
-    /// False = Diffrent
+    /// False = Different
     /// </summary>
     /// <param name="extension"></param>
     /// <param name="fileData"></param>
