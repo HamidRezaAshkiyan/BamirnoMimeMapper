@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MimeDetective;
-using MimeDetective.Definitions;
-using MimeDetective.Engine;
+﻿using MimeDetective;
 
 namespace BamirnoMimeMapper
 {
     public class Map
     {
-        private readonly Dictionary<string, string> mimeMap = new Dictionary<string, string>
+        private readonly Dictionary<string, string> _mimeMap = new()
         {
             [".jpg"] = "image/jpeg",
             [".jpeg"] = "image/jpeg",
@@ -182,7 +175,7 @@ namespace BamirnoMimeMapper
             try
             {
                 extension = extension.Replace(".", "").ToLowerInvariant();
-                return mimeMap[$".{extension}"];
+                return _mimeMap[$".{extension}"];
             }
             catch
             {
@@ -200,7 +193,7 @@ namespace BamirnoMimeMapper
             try
             {
                 mimeType = mimeType.ToLowerInvariant();
-                return mimeMap?.Where(s => s.Value == mimeType)?.FirstOrDefault().Key;
+                return _mimeMap?.Where(s => s.Value == mimeType)?.FirstOrDefault().Key;
             }
             catch
             {
@@ -225,7 +218,7 @@ namespace BamirnoMimeMapper
 
                 extension = extension.StartsWith(".") ? extension.ToLowerInvariant() : "." + extension.ToLowerInvariant();
 
-                if (!mimeMap.TryGetValue(extension, out var expectedMime))
+                if (!_mimeMap.TryGetValue(extension, out var expectedMime))
                     return false;
 
                 var inspector = new ContentInspectorBuilder
